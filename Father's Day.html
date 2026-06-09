@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Thank You Dad ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #fceabb, #f8b500);
+  text-align: center;
+  color: #333;
+}
+
+/* header */
+header {
+  padding: 60px 20px;
+  background: rgba(0,0,0,0.2);
+  color: white;
+}
+
+header h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+/* card */
+.card {
+  background: white;
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  width: 85%;
+  margin: auto;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* button */
+button {
+  padding: 12px 25px;
+  border: none;
+  background: #ff3333;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #cc0000;
+}
+
+/* hidden message */
+#msg {
+  display: none;
+  font-size: 22px;
+  color: green;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* hearts */
+#hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  top: -20px;
+  font-size: 24px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* footer */
+footer {
+  background: #222;
+  color: white;
+  padding: 15px;
+  margin-top: 40px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Happy Father’s Day ❤️</h1>
+  <p>A small tribute to my hero</p>
+</header>
+
+<section class="card">
+  <h2>Dear Dad</h2>
+
+<audio id="bgmusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="document.getElementById('bgmusic').play()">
+  ▶ Play Music
+</button>
+
+
+  <p>
+    Thank you for your love, care, and guidance.<br>
+    You are my biggest inspiration and strength ❤️
+  </p>
+</section>
+
+<section class="grid">
+
+  <div class="box">❤️ Love</div>
+  <div class="box">💪 Strength</div>
+  <div class="box">📘 Guidance</div>
+  <div class="box">🏆 Inspiration</div>
+
+</section>
+
+<section class="card">
+  <h2>Special Surprise 💌</h2>
+
+  <button onclick="startSurprise()">Click for Surprise</button>
+
+  <div id="msg">I LOVE YOU DAD ❤️</div>
+</section>
+
+<div id="hearts"></div>
+
+<footer>
+  Made with ❤️ for Dad
+</footer>
+
+<script>
+function startSurprise() {
+  document.getElementById("msg").style.display = "block";
+
+  for (let i = 0; i < 35; i++) {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+    document.getElementById("hearts").appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+}
+</script>
+
+<a href="2.html">
+  <button>📸 View Father’s Photo Collage</button>
+</a>
+
+</body>
+</html>
